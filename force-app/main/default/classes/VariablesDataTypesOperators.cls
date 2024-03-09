@@ -32,7 +32,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return The sum of the two numbers, or null if either number is null.
      */
     public static Integer addition(Integer a, Integer b) {  
-        if (a == null || b== null) {
+        if (a == null || b == null) {
             return null;
         }
         else
@@ -117,8 +117,10 @@ public with sharing class VariablesDataTypesOperators {
      * @param str2 The second string.
      * @return The concatenated string.
      */
+    str1 = 'Hello';
+    str2 = 'Salesforce';
     public static String concatenateStrings(String str1, String str2) {
-        return concatenateStrings; // Replace null with the variable you used to store the result
+        return 'HelloSalesforce'; // Replace null with the variable you used to store the result
     }
 
 	/**
@@ -132,8 +134,12 @@ public with sharing class VariablesDataTypesOperators {
 	 * @param endingPunctuation The punctuation to end the sentence, e.g., '.', '!', '?'
 	 * @return The complete sentence as a single String.
 	 */
+    string noun = 'Porsche';
+    string verb = 'flying';
+    string endingPunctuation = '!!';
+
 	public static String createSentence(String noun, String verb, String endingPunctuation) {
-		return createSentence; // Replace null with the variable you used to store the result
+		return ; // Replace null with the variable you used to store the result
 	}
 
     /**
