@@ -208,7 +208,7 @@ public with sharing class VariablesDataTypesOperators {
     final MILLISECONDS_PER_MINUTE Integer = 60000
     public static Integer convertMinutesToMilliseconds(Integer minutes) {
         // Integer MILLISECONDS_PER_MINUTE = null; // Make this value a constant
-        Integer milliseconds = minutes * MILLISECONDS_PER_MINUTE ;
+        Integer milliseconds = minutes * MILLISECONDS_PER_MINUTE;
         return milliseconds; // Replace null with the variable you used to store the result
     }    
     
@@ -223,8 +223,11 @@ public with sharing class VariablesDataTypesOperators {
      * @param c The third number.
      * @return The average of the three numbers.
      */
+
+    integer sumOfNumbers = (Integer a + Integer b + Integer c);
+    final integer totalNumbers = (3);
     public static Double averageOfThreeNumbers(Integer a, Integer b, Integer c) {
-        return (a + b + c) / 3;
+        return (sumOfNumbers) / totalNumbers;
     }
 
     /**
@@ -239,7 +242,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Integer adjustOrderOfOperations1(Integer a, Integer b, Integer c) {
         // Add parentheses around the addition operation so that it is performed before multiplication
-        Integer result = (a + b)* c;
+        Integer result = (a +  b) * c;
 
         // Return the result
         return result; // Replace null with the variable you used to store the result
@@ -274,7 +277,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Double complexOrderOfOperations(Integer a, Integer b, Integer c, Integer d, Integer e) {
         // Add parentheses around the multiplication and subtraction operations so that they are performed before division and addition
-        Double result = (a * b) - c / (Double) d + e;
+        Double result = (a * b) - (c / (d + e));;
 
         return result; // Replace null with the variable you used to store the result
     }
@@ -287,12 +290,14 @@ public with sharing class VariablesDataTypesOperators {
      * @return The temperature in Celsius equivalent to the given Fahrenheit temperature.
      */
 
-    final Celsius Double = (Fahrenheit - SUBTRACT_FACTOR) * MULTIPLY_FACTOR/DIVIDE_FACTOR 
+    
     public static Double convertFahrenheitToCelsius(Double fahrenheit) {
         final Double SUBTRACT_FACTOR = 32.0;
         final Double MULTIPLY_FACTOR = 5.0;
         final Double DIVIDE_FACTOR = 9.0;
-    
+        
+         Double Celsius = (Fahrenheit - SUBTRACT_FACTOR) * MULTIPLY_FACTOR/DIVIDE_FACTOR; 
+
         return Celsius; // Replace null with the variable you used to store the result
     }
 
@@ -309,11 +314,11 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Integer performDivisionAndCast(Double a, Double b) {
         // Perform the division and cast (round down) off the result.
-        Double divisionResult = null;
+        Double divisionResult = Double a / Double b;
 
         // Write the code for type casting the divisionResult to an Integer
-        Integer roundedResult = null;
-        return null; // Replace null with the variable you used to store the result
+        Integer roundedResult = (int)Math.round(Double divisionResult);
+        return roundedResult; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -327,7 +332,8 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Decimal calculateWeeklyPaycheck(Decimal hourlyRate, Double numberOfHours) {
         // Calculate the weekly paycheck using the formula: rate multiplied by hours
-        return null; // Replace null with the variable you used to store the result
+        Decimal Weeklypaycheck = Decimal hourlyRate * Double numberOfHours;
+        return Weeklypaycheck; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -341,7 +347,11 @@ public with sharing class VariablesDataTypesOperators {
      * @return A Decimal representing the monthly paycheck.
      */
     public static Decimal calculateMonthlyPaycheck(Decimal hourlyRate, Double numberOfHours) {
-        return null; // Replace null with the variable you used to store the result
+        integer numberOfWeeksWorked = 4;
+        Decimal MonthlyPaycheck = Weeklypaycheck * numberOfWeeksWorked;
+
+        return MonthlyPaycheck; // Replace null with the variable you used to store the result
+        
     }
 
     /**
@@ -355,6 +365,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return The total cost after applying the sales tax.
      */
     public static Decimal calculateTotalCost(Decimal pricePerUnit, Integer numberOfUnits, Decimal salesTaxRate) {
-        return null; // Replace null with the variable you used to store the result
+        Decimal TotalCost = (pricePerUnit * numberOfUnits) * (1 + salesTaxRate);
+        return TotalCost; // Replace null with the variable you used to store the result
     }
 }
