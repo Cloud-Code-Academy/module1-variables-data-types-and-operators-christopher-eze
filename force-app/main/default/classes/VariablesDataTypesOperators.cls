@@ -88,13 +88,23 @@ public with sharing class VariablesDataTypesOperators {
      * @param num The number to check.
      * @return True if the number is even, False otherwise.
      */
-    public static Boolean isEven (Integer num) { 
-        if ( num % 2 == 0) { 
+
+    public static Boolean isEven(Integer num) { 
+        if (num % 2 == 0) { 
             return true;
-       } else {
+        } else {
             return false;
         }    
     }
+
+    // public static Boolean isEven (Integer num) {
+    // Integer remainder = Math.mod(num, 2);
+    // System.assertEquals(remainder, 0); // This line may not be necessary for the isEven method
+    // if (num == 0) {
+    //     return true;
+    // } else {
+    //     return false;
+    // }
 
     /**
      * Question 5
@@ -105,7 +115,10 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Boolean isPositive(Integer num) {
         if (num > 0) {
-        return (num); // Replace null with the variable you used to store the result
+        return true; // Replace null with the variable you used to store the result
+        }
+        else {
+            return false;
         }
     }
 
@@ -117,8 +130,9 @@ public with sharing class VariablesDataTypesOperators {
      * @param str2 The second string.
      * @return The concatenated string.
      */
-    str1 = 'Hello';
-    str2 = 'Salesforce';
+
+    String str1 = 'Hello';
+    string str2 = 'Salesforce';
     public static String concatenateStrings(String str1, String str2) {
         return 'HelloSalesforce'; // Replace null with the variable you used to store the result
     }
@@ -134,12 +148,14 @@ public with sharing class VariablesDataTypesOperators {
 	 * @param endingPunctuation The punctuation to end the sentence, e.g., '.', '!', '?'
 	 * @return The complete sentence as a single String.
 	 */
+    
     string noun = 'Porsche';
     string verb = 'flying';
     string endingPunctuation = '!!';
 
 	public static String createSentence(String noun, String verb, String endingPunctuation) {
-		return ; // Replace null with the variable you used to store the result
+        return 'The ' + string noun + ' is ' + string verb + endingPunctuation;
+		return The Porsche is flying!!; // Replace null with the variable you used to store the result
 	}
 
     /**
@@ -151,10 +167,15 @@ public with sharing class VariablesDataTypesOperators {
      * @param dt The date to check.
      * @return True if the date is in the past, False otherwise.
      */
+    Date Today = Date.today();
     public static Boolean isDateInPast(Date dt) {
-        return null; // Replace null with the variable you used to store the result
-    }
-
+        if dt < Today {
+            return true;
+        } else {
+            return false;
+            }
+        }
+        
     /**
      * Question 9
      * Checks if a date is today or in the future.
@@ -165,7 +186,13 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is today or in the future, False otherwise.
      */
     public static Boolean isDateTodayOrFuture(Date dt) {
-        return null; // Replace null with the variable you used to store the result
+        Date Today = Date.today();
+    public static Boolean isDateInPast(Date dt) {
+        if dt >= Today {
+            return true;
+        } else {
+            return false;
+            }
     }
 
     /**
@@ -177,11 +204,14 @@ public with sharing class VariablesDataTypesOperators {
      * @param minutes The number of minutes.
      * @return The number of milliseconds equivalent to the given number of minutes.
      */
+    
+    final MILLISECONDS_PER_MINUTE Integer = 60000
     public static Integer convertMinutesToMilliseconds(Integer minutes) {
-        Integer MILLISECONDS_PER_MINUTE = null; // Make this value a constant
-        Integer milliseconds;
-        return null; // Replace null with the variable you used to store the result
+        // Integer MILLISECONDS_PER_MINUTE = null; // Make this value a constant
+        Integer milliseconds = minutes * MILLISECONDS_PER_MINUTE ;
+        return milliseconds; // Replace null with the variable you used to store the result
     }    
+    
 
     /**
      * Question 11
@@ -194,7 +224,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return The average of the three numbers.
      */
     public static Double averageOfThreeNumbers(Integer a, Integer b, Integer c) {
-        return null; // Replace null with the variable you used to store the result
+        return (a + b + c) / 3;
     }
 
     /**
@@ -209,10 +239,10 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Integer adjustOrderOfOperations1(Integer a, Integer b, Integer c) {
         // Add parentheses around the addition operation so that it is performed before multiplication
-        Integer result = a + b * c;
+        Integer result = (a + b)* c;
 
         // Return the result
-        return null; // Replace null with the variable you used to store the result
+        return result; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -224,8 +254,8 @@ public with sharing class VariablesDataTypesOperators {
         // Add parentheses in the below expression to change the result.
         // The result of the expression as it is right now is 43. 
         // You should add parentheses so that the result of the expression becomes 8.
-        Integer answer = 48 - 15 + 5 * 2;
-        return null; // Replace null with the variable you used to store the result
+        Integer answer = 48 - (15 + 5) * 2;
+        return answer; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -244,9 +274,9 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Double complexOrderOfOperations(Integer a, Integer b, Integer c, Integer d, Integer e) {
         // Add parentheses around the multiplication and subtraction operations so that they are performed before division and addition
-        Double result = a * b - c / (Double) d + e;
+        Double result = (a * b) - c / (Double) d + e;
 
-        return null; // Replace null with the variable you used to store the result
+        return result; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -256,12 +286,14 @@ public with sharing class VariablesDataTypesOperators {
      * @param fahrenheit The temperature in Fahrenheit.
      * @return The temperature in Celsius equivalent to the given Fahrenheit temperature.
      */
+
+    final Celsius Double = (Fahrenheit - SUBTRACT_FACTOR) * MULTIPLY_FACTOR/DIVIDE_FACTOR 
     public static Double convertFahrenheitToCelsius(Double fahrenheit) {
         final Double SUBTRACT_FACTOR = 32.0;
         final Double MULTIPLY_FACTOR = 5.0;
         final Double DIVIDE_FACTOR = 9.0;
     
-        return null; // Replace null with the variable you used to store the result
+        return Celsius; // Replace null with the variable you used to store the result
     }
 
     
